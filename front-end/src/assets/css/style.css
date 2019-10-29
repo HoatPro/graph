@@ -1,0 +1,127 @@
+#div-page-group-mp-list div.list {
+    overflow : scroll;
+    max-height: 800px;
+}
+
+#div-page-group-mp-list div.list table thead th {
+    padding: 4px !important;
+    text-align: center !important;
+}
+
+#div-page-group-mp-list div.list table td {
+    padding: 4px !important;
+    text-align: center !important;
+}
+
+#div-page-group-mp-parts div.list {
+    overflow : scroll;
+    max-height: 800px;
+}
+
+#div-page-group-mp-parts div.list table thead th {
+    padding: 4px !important;
+    text-align: center !important;
+}
+
+#div-page-group-mp-parts div.list table td {
+    padding: 4px !important;
+    text-align: center !important;
+}
+
+#div-page-group-mp-summary div.list {
+    overflow : scroll;
+    max-height: 800px;
+}
+
+#div-page-group-mp-summary div.list table thead th {
+    padding: 4px !important;
+    text-align: center !important;
+}
+
+#div-page-group-mp-summary div.list table td {
+    padding: 4px !important;
+    text-align: center !important;
+}
+
+#div-page-group-mp-summary div.list table td {
+    padding: 4px !important;
+    text-align: center !important;
+}
+
+#div-page-cgnat-summary div.list {
+    overflow : scroll;
+    max-height: 800px;
+}
+
+#div-page-cgnat-summary div.list table thead th {
+    padding: 4px !important;
+    text-align: center !important;
+}
+
+#div-page-cgnat-summary div.list table td {
+    padding: 4px !important;
+    text-align: center;
+}
+
+/*#div-page-cgnat-summary div.list table .mpop-prefer {*/
+    /*text-align: left !important;*/
+    /*justify-content: space-between;*/
+/*}*/
+
+#div-page-iplc-traffic-statistics .port-list {
+    /*max-height: 350px;*/
+    /*overflow: scroll;*/
+    padding-bottom: 15px;
+}
+
+#div-page-iplc-traffic-statistics th {
+    text-align: center;
+}
+
+#div-page-iplc-traffic-statistics .statistical-table td{
+    text-align: right;
+}
+
+#div-page-iplc-traffic-statistics .statistical-table td.header{
+    text-align: center;
+    font-weight: bold;
+}
+
+#div-page-iplc-traffic-statistics .statistical-table td.vertical-header{
+    text-align: left;
+    font-weight: bold;
+}
+
+#div-page-iplc-traffic-statistics .statistical-table td.vertical-sub-header{
+    text-align: right;
+    font-weight: bold;
+}
+
+#div-page-iplc-traffic-statistics .statistical-table tr.sum-row{
+    font-weight: bold;
+    background: #e4e4e4;
+}
+
+#div-page-iplc-traffic-statistics .statistical-table td.sum-row-header{
+    text-align: center;
+}
+
+#div-page-iplc-traffic-statistics .accordion .title{
+    font-weight: bold;
+}
+
+.ui.items .item .content {
+    white-space: nowrap !important;
+}
+
+.plan-content {
+    max-width: 150px;
+}
+
+table {
+    width: 100% !important;
+}
+
+#div-iplc-traffic-chart .react-datepicker-wrapper .react-datepicker__input-container {
+    display: block !important;
+}

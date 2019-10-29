@@ -1,0 +1,78 @@
+# setup nginx
+sudo apt update
+sudo apt install nginx
+
+# Check the available ufw application profiles
+sudo ufw app list
+
+# Let's enable the most restrictive profile that will still allow the traffic you've configured, permitting traffic on port 80
+sudo ufw allow 'Nginx HTTP'
+
+## output:
+Available applications:
+  Nginx Full
+  Nginx HTTP
+  Nginx HTTPS
+  OpenSSH
+
+# Verify the change
+sudo ufw status
+
+## Output
+Status: active
+
+To                         Action      From
+--                         ------      ----
+OpenSSH                    ALLOW       Anywhere
+Nginx HTTP                 ALLOW       Anywhere
+OpenSSH (v6)               ALLOW       Anywhere (v6)
+Nginx HTTP (v6)            ALLOW       Anywhere (v6)
+
+# Check with the systemd init system to make sure the service
+systemctl status nginx
+
+## Output
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Fri 2018-04-20 16:08:19 UTC; 3 days ago
+     Docs: man:nginx(8)
+ Main PID: 2369 (nginx)
+    Tasks: 2 (limit: 1153)
+   CGroup: /system.slice/nginx.service
+           ├─2369 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─2380 nginx: worker process
+
+# Create the directory for 172.27.229.69
+sudo mkdir /var/www/raca
+sudo chmod 777 /var/www/raca
+scp -r path-for-project/build/* /var/www/raca
+
+# config nginx
+sudo nano /etc/nginx/sites-avaliable/default
+
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name 172.27.229.69;
+    root /var/www/raca;
+    index index.html index.htm;
+    location / {
+        if (!-e $request_filename){
+                rewrite ^(.*)$ /index.html break;
+        }
+    }
+}
+server {
+        listen 9210;
+        location / {
+            proxy_pass http://0.0.0.0:9200;
+        }
+}
+server {
+        listen 5611;
+        location / {
+            proxy_pass http://0.0.0.0:5601;
+        }
+}
+
+

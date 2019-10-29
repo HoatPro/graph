@@ -1,0 +1,93 @@
+<!-- Content Header (Page header) -->
+{{#append 'css'}}
+    <link rel="stylesheet" type="text/css" href="/openid/src/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="/openid/src/css/style2.css" />
+{{/append}}
+<section class="content-header">
+
+
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <h1 class="title">Xin chào <strong>{{user.username}}</strong>, vui lòng chọn trang web muốn truy cập dưới đây:</h1>
+    <ul class="ca-menu">
+        {{#xif env "==" "production"}}
+            <li>
+                <a href="https://raca.ast.fpt.net?token={{token}}">
+                    <span class="ca-icon">K</span>
+                    <div class="ca-content">
+                        <h2 class="ca-main">RACA</h2>
+                        <h3 class="ca-sub">Quản lý thiết bị trong DC</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="https://netp.ast.fpt.net/page/login?token={{token}}">
+                    <span class="ca-icon">K</span>
+                    <div class="ca-content">
+                        <h2 class="ca-main">Net Planner</h2>
+                        <h3 class="ca-sub">Nghiệm thu online</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="http://netd.ast.fpt.net/login?token={{token}}">
+                    <span class="ca-icon">K</span>
+                    <div class="ca-content">
+                        <h2 class="ca-main">Net Dashboard</h2>
+                        <h3 class="ca-sub">Net Dashboard</h3>
+                    </div>
+                </a>
+            </li>
+			<li>
+                <a href="https://otsd.ast.fpt.net?token={{token}}">
+                    <span class="ca-icon">K</span>
+                    <div class="ca-content">
+                        <h2 class="ca-main">OTS Dashboard</h2>
+                        <h3 class="ca-sub">OTS Dashboard</h3>
+                    </div>
+                </a>
+            </li>
+        {{else}}
+            <li>
+                <a href="http://localhost:3000?token={{token}}">
+                    <span class="ca-icon">K</span>
+                    <div class="ca-content">
+                        <h2 class="ca-main">RACA</h2>
+                        <h3 class="ca-sub">Quản lý thiết bị trong DC</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:3000/page/login?token={{token}}">
+                    <span class="ca-icon">K</span>
+                    <div class="ca-content">
+                        <h2 class="ca-main">Net Planner</h2>
+                        <h3 class="ca-sub">Nghiệm thu online</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:3000?token={{token}}">
+                    <span class="ca-icon">K</span>
+                    <div class="ca-content">
+                        <h2 class="ca-main">Net Dashboard</h2>
+                        <h3 class="ca-sub">Net Dashboard</h3>
+                    </div>
+                </a>
+            </li>
+			<li>
+                <a href="http://localhost:3000?token={{token}}">
+                    <span class="ca-icon">K</span>
+                    <div class="ca-content">
+                        <h2 class="ca-main">OTS Dashboard</h2>
+                        <h3 class="ca-sub">OTS Dashboard</h3>
+                    </div>
+                </a>
+            </li>
+        {{/xif}}
+
+    </ul>
+</section>
+<!-- /.content -->
