@@ -13,7 +13,7 @@
     "moment": "^2.22.2",
     "mysql": "^2.16.0",
     "mysql-connection-pool-manager": "^1.5.8",
-    "redis": "^2.8.0"
+    "redis": "^3.1.1"
   },
   "devDependencies": {},
   "scripts": {
